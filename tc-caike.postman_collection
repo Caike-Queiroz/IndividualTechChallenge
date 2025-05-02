@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "2eaccdf1-8b5e-4463-a117-b9890fa0380b",
+		"name": "Tech Challenge - Fase 01 | Caike",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "24136292",
+		"_collection_link": "https://galactic-eclipse-841224.postman.co/workspace/My-Workspace~9773321a-d3da-477d-8d9b-4da51df9509f/collection/24136292-2eaccdf1-8b5e-4463-a117-b9890fa0380b?action=share&source=collection_link&creator=24136292"
+	},
+	"item": [
+		{
+			"name": "GET users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users?page=1&size=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/users/1"
+			},
+			"response": []
+		},
+		{
+			"name": "POST user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userType\": \"Dono de restaurante\",\r\n    \"name\": \"John Doe\",\r\n    \"email\": \"johndoe2026@email.com\",\r\n    \"login\": \"johnDoe2026\",\r\n    \"password\": \"1234\",\r\n    \"address\": {\r\n        \"street\": \"Av. ABC\",\r\n        \"num\": 16,\r\n        \"complement\": \"\",\r\n        \"country\": \"Brasil\",\r\n        \"city\": \"SP\",\r\n        \"state\": \"SP\",\r\n        \"zipcode\": \"01234-567\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/users"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/users/1"
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH user",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"John Doe\",\r\n    \"email\": \"johndoe11112@email.com\",\r\n    \"login\": \"johnDoe92000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/users/1"
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH changePassword",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"currentPassword\": \"12345\",\r\n    \"newPassword\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/users/2/password"
+			},
+			"response": []
+		},
+		{
+			"name": "POST login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\": \"johnDoe2026\",\r\n    \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/login"
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,31 @@
+version: '3.9'
+
+services:
+  api:
+    image: tc-caike
+    container_name: springAPI
+    ports:
+      - '8080:8080'
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: bitnami/postgresql:latest
+    container_name: postgresql
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Root2025@$
+      POSTGRES_DB: postgres
+    volumes:
+      - pgdata:/bitnami/postgresql
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  pgdata:

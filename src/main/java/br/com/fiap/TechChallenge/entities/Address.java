@@ -1,12 +1,10 @@
 package br.com.fiap.TechChallenge.entities;
 
 import br.com.fiap.TechChallenge.dtos.AddressPostRequestDTO;
-import jakarta.validation.Valid;
 import lombok.*;
 
 @Getter
 @NoArgsConstructor
-@AllArgsConstructor
 @EqualsAndHashCode
 @ToString
 public class Address {
