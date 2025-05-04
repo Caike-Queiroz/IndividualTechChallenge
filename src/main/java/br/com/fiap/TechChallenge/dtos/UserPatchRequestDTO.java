@@ -14,6 +14,4 @@ public record UserPatchRequestDTO(
 
     @NotBlank(message = "O login não pode ser nulo")
     String login
-
-    //private Address address;
 ) {}

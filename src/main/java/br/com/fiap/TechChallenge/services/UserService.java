@@ -82,23 +82,26 @@ public class UserService {
         }
 
         if (
-                this.userRepository.findById(id).get().getEmail().equals(userDTO.email()) &&
-                        this.userRepository.findById(id).get().getLogin().equals(userDTO.login())
-        ) {
+            this.userRepository.findById(id).get().getEmail().equals(userDTO.email()) &&
+            this.userRepository.findById(id).get().getLogin().equals(userDTO.login())
+        )
+        {
             throw new DuplicatedDataException("O novo valor de login e email estão iguais aos valores atuais");
         }
 
         if (
-                this.userRepository.findByEmail(userDTO.email()).isPresent() &&
-                        this.userRepository.findByEmail(userDTO.email()).get().getId() != id
-        ) {
+            this.userRepository.findByEmail(userDTO.email()).isPresent() &&
+            this.userRepository.findByEmail(userDTO.email()).get().getId() != id
+        )
+        {
             throw new DuplicatedDataException("Email já cadastrado");
         }
 
         if (
-                this.userRepository.findByLogin(userDTO.login()).isPresent() &&
-                        this.userRepository.findByLogin(userDTO.login()).get().getId() != id
-        ) {
+            this.userRepository.findByLogin(userDTO.login()).isPresent() &&
+            this.userRepository.findByLogin(userDTO.login()).get().getId() != id
+        )
+        {
             throw new DuplicatedDataException("Login já cadastrado");
         }
 

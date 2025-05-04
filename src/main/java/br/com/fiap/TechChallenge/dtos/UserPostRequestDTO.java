@@ -24,9 +24,6 @@ public record UserPostRequestDTO(
     @NotBlank(message = "A senha não pode ser nula")
     String password,
 
-    //@JsonProperty("address")
     @Valid @JsonAlias("address")
     AddressPostRequestDTO address
-
-    //private Address address;
 ) {}
